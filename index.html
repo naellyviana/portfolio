@@ -64,23 +64,28 @@
         <a href="#trabalhos" class="btn btn--ink" data-i18n="hero.cta">Ver trabalhos</a>
       </div>
 
-      <!-- leque de cards (ref 3) -->
+      <!-- roleta de cards: passa para o lado e se repete (cópias criadas no main.js) -->
       <div class="fan" aria-label="Destaques">
-        <button class="fan__card" data-video="1247732415" data-project="vela" data-title="Vela aromática Jasmim (3D)" style="--r:-14deg;--x:-2">
-          <img src="vela.jpg" alt="Vela aromática Jasmim, modelagem 3D" loading="lazy">
-        </button>
-        <button class="fan__card fan__card--red" data-video="1247727059" data-title="Demo Reel 2023—2026" style="--r:-6deg;--x:-1">
-          <span class="fan__mark">NV</span><span class="fan__tag">Demo reel</span>
-        </button>
-        <button class="fan__card" data-video="1247733356" data-project="croc" data-title="CrocBuds Hippie Yippie" style="--r:0deg;--x:0">
-          <img src="crocbuds.jpg" alt="Anúncio CrocBuds Hippie Yippie" loading="lazy">
-        </button>
-        <button class="fan__card" data-video="1247732413" data-project="easy" data-title="Easyphone (3D)" style="--r:7deg;--x:1">
-          <img src="after.jpg" alt="Easyphone, modelagem 3D" loading="lazy">
-        </button>
-        <button class="fan__card" data-playlist="cultura" data-project="cultura" data-title="Telas Semana da Cultura 2025" style="--r:14deg;--x:2">
-          <img src="cultura-xaxado.jpg" alt="Tela da Semana da Cultura 2025" loading="lazy">
-        </button>
+        <div class="fan__track">
+          <button class="fan__card" data-video="1247732415" data-project="vela" data-title="Vela aromática Jasmim (3D)">
+            <img src="vela.jpg" alt="Vela aromática Jasmim, modelagem 3D">
+          </button>
+          <button class="fan__card fan__card--red" data-video="1247727059" data-title="Demo Reel 2023—2026">
+            <span class="fan__mark">NV</span><span class="fan__tag">Demo reel</span>
+          </button>
+          <button class="fan__card" data-video="1247733356" data-project="croc" data-title="CrocBuds Hippie Yippie">
+            <img src="crocbuds.jpg" alt="Comercial CrocBuds Hippie Yippie">
+          </button>
+          <button class="fan__card" data-video="1247732413" data-project="easy" data-title="Easyphone (3D)">
+            <img src="after.jpg" alt="Easyphone, conceito 3D">
+          </button>
+          <button class="fan__card" data-playlist="cultura" data-project="cultura" data-title="Telas Semana da Cultura 2025">
+            <img src="cultura-xaxado.jpg" alt="Tela da Semana da Cultura 2025">
+          </button>
+          <button class="fan__card" data-video="1247733355" data-project="steal" data-title="Steal Her Look by Mercado Livre">
+            <img src="stealherlook.jpg" alt="Campanha Steal Her Look by Mercado Livre">
+          </button>
+        </div>
       </div>
     </section>
 
@@ -118,6 +123,7 @@
         <article class="card card--wide" data-project="croc">
           <button class="card__media" data-video="1247733356" data-project="croc" data-title="CrocBuds Hippie Yippie">
             <img src="crocbuds.jpg" alt="Comercial conceitual CrocBuds Hippie Yippie" loading="lazy">
+            <video class="card__video" data-src="preview-croc.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
             <span class="card__play" aria-hidden="true">▶</span>
           </button>
           <div class="card__info">
@@ -135,6 +141,7 @@
         <article class="card card--tall" data-project="vela">
           <button class="card__media" data-video="1247732415" data-project="vela" data-title="Vela aromática Jasmim (3D)">
             <img src="vela.jpg" alt="Vela aromática Jasmim, modelagem 3D" loading="lazy">
+            <video class="card__video" data-src="preview-vela.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
             <span class="card__play" aria-hidden="true">▶</span>
           </button>
           <div class="card__info">
@@ -151,6 +158,7 @@
         <article class="card card--wide" data-project="steal">
           <button class="card__media" data-video="1247733355" data-project="steal" data-title="Steal Her Look by Mercado Livre">
             <img src="stealherlook.jpg" alt="Campanha Steal Her Look by Mercado Livre" loading="lazy">
+            <video class="card__video" data-src="preview-steal.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
             <span class="card__play" aria-hidden="true">▶</span>
           </button>
           <div class="card__info">
@@ -168,6 +176,7 @@
         <article class="card card--tall" data-project="easy">
           <button class="card__media" data-video="1247732413" data-project="easy" data-title="Easyphone (3D)">
             <img src="after.jpg" alt="Easyphone, conceito em 3D" loading="lazy">
+            <video class="card__video" data-src="preview-easy.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
             <span class="card__play" aria-hidden="true">▶</span>
           </button>
           <div class="card__info">
@@ -184,6 +193,7 @@
         <article class="card card--wide" data-project="cultura">
           <button class="card__media" data-playlist="cultura" data-project="cultura" data-title="Telas Semana da Cultura 2025">
             <img src="cultura-aquarela.jpg" alt="Tela da Semana da Cultura 2025" loading="lazy">
+            <video class="card__video" data-src="preview-cultura.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
             <span class="card__play" aria-hidden="true">▶</span>
             <span class="card__count">6 <span data-i18n="w.cult.count">vídeos</span></span>
           </button>

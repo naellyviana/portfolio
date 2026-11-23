@@ -82,6 +82,39 @@
   try { saved = localStorage.getItem("lang"); } catch (e) {}
   if (saved === "en" || (!saved && !navigator.language.toLowerCase().startsWith("pt"))) setLang("en");
 
+  /* ---------- roleta: duplica os cards para a faixa girar sem emenda ---------- */
+  const track = document.querySelector(".fan__track");
+  if (track) {
+    [...track.children].forEach(card => {
+      const copy = card.cloneNode(true);
+      copy.setAttribute("aria-hidden", "true");
+      copy.tabIndex = -1;
+      track.appendChild(copy);
+    });
+  }
+
+  /* ---------- prévias sem som nos cards: só tocam quando o card está na tela ---------- */
+  const previews = document.querySelectorAll(".card__video");
+  const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (previews.length && !calm && "IntersectionObserver" in window) {
+    previews.forEach(v => {
+      v.muted = true;
+      v.addEventListener("playing", () => v.classList.add("is-playing"));
+    });
+    const watch = new IntersectionObserver(entries => {
+      entries.forEach(({ target: v, isIntersecting }) => {
+        if (isIntersecting) {
+          if (!v.src) v.src = v.dataset.src;
+          const p = v.play();
+          if (p && p.catch) p.catch(() => {});
+        } else {
+          v.pause();
+        }
+      });
+    }, { rootMargin: "120px 0px" });
+    previews.forEach(v => watch.observe(v));
+  }
+
   /* ---------- vídeos (Vimeo) ---------- */
   const PLAYLISTS = {
     cultura: [
