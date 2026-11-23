@@ -63,7 +63,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   font-family: var(--display);
   font-weight: 900;
   font-stretch: 118%;
-  font-size: clamp(44px, 9vw, 140px);
+  font-size: clamp(min(44px, 9.2vw), 9vw, 140px);
   line-height: .86;
   letter-spacing: -.03em;
   text-transform: uppercase;
